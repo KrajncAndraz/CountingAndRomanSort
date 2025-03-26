@@ -32,6 +32,38 @@ void saveArray(vector<int>& arr)
 	outputFile.close();
 }
 
+int negSupport(vector<int>& arr, bool convert, int min = 0)
+{
+    if (convert)
+    {
+        min = 0;
+        for (int i = 0; i < arr.size(); i++)
+        {
+            if (arr[i] < min)
+                min = arr[i];
+        }
+        if (min < 0)
+        {
+            for (int i = 0; i < arr.size(); i++)
+            {
+                arr[i] -= min;
+            }
+            return min;
+        }
+    }
+    else
+    {
+        if (min < 0)
+        {
+            for (int i = 0; i < arr.size(); i++)
+            {
+                arr[i] += min;
+            }
+        }
+    }
+    return 0;
+}
+
 int main(int argc, char* argv[])
 {
     cout<<"Hello World!"<<endl;
