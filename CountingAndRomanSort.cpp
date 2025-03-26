@@ -6,7 +6,22 @@ using namespace std;
 
 vector<int> getArray(string filename)
 {
-    //read the file and extract numbers from it into a vector
+    ifstream inputFile(filename);
+    if (!inputFile) {
+        cerr << "Error: Could not open file " << filename << endl;
+        return {};
+    }
+    vector<int> arr;
+    int extractedNumber;
+    if (inputFile.is_open() && inputFile.good())
+    {
+        while (inputFile >> extractedNumber)
+        {
+            arr.push_back(extractedNumber);
+        }
+    }
+	inputFile.close();
+    return arr;
 }
 
 int main(int argc, char* argv[])
