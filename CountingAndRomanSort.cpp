@@ -26,7 +26,10 @@ vector<int> getArray(string filename)
 
 void saveArray(vector<int>& arr)
 {
-    //save sorted array to out.txt
+    ofstream outputFile("out.txt");
+    for (int i = 0; i < arr.size(); i++)
+        outputFile << arr[i] << ' ';
+	outputFile.close();
 }
 
 int main(int argc, char* argv[])
