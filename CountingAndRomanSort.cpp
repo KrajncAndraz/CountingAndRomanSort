@@ -24,6 +24,11 @@ vector<int> getArray(string filename)
     return arr;
 }
 
+void saveArray(vector<int>& arr)
+{
+    //save sorted array to out.txt
+}
+
 int main(int argc, char* argv[])
 {
     cout<<"Hello World!"<<endl;
