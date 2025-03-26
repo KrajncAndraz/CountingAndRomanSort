@@ -32,6 +32,13 @@ void saveArray(vector<int>& arr)
 	outputFile.close();
 }
 
+int negSupport(vector<int>& arr, bool convert, int min = 0)
+{
+    //if converting find min value, if min<0 subtract from all elements and return min
+    //else revert by adding min to all elements
+    //a.k.a. add support for arrays with neg. numbers
+}
+
 int main(int argc, char* argv[])
 {
     cout<<"Hello World!"<<endl;
