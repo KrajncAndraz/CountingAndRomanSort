@@ -75,6 +75,11 @@ vector<int> innitC(vector<int>& A)
     return vector<int>(max+1, 0);
 }
 
+vector<int> countingSort(vector<int>& A)
+{
+    //just implement this shit
+}
+
 int main(int argc, char* argv[])
 {
     cout<<"Hello World!"<<endl;
