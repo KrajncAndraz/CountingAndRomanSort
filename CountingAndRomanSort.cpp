@@ -77,7 +77,24 @@ vector<int> innitC(vector<int>& A)
 
 vector<int> countingSort(vector<int>& A)
 {
-    //just implement this shit
+    int min = negSupport(A, true);
+    vector<int> C = innitC(A);
+
+    for (int i = 0; i < A.size(); i++)
+        C[A[i]]++;
+
+    for (int i = 1; i < C.size(); i++)
+        C[i] += C[i - 1];
+
+    vector<int> B(A.size(), 0);
+    for (int i = A.size()-1; i >= 0; i--)
+    {
+        B[C[A[i]] - 1] = A[i];
+        C[A[i]]--;
+    }
+
+    negSupport(B, false, min);
+    return B;
 }
 
 int main(int argc, char* argv[])
