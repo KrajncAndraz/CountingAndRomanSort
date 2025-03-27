@@ -99,7 +99,28 @@ vector<int> countingSort(vector<int>& A)
 
 vector<int> romanSort(vector<int>& A)
 {
-    //fuck you
+    int min = negSupport(A, true);
+    vector<int> C = innitC(A);
+
+    for (int i = 0; i < A.size(); i++)
+        C[A[i]]++;
+
+    vector<int> B(A.size(), 0);
+    int k = 0;
+    for (int i = 0; i < C.size(); i++)
+    {
+        if (C[i] != 0)
+        {
+            for (int j = 0; j < C[i]; j++)
+            {
+                B[k] = i;
+                k++;
+            }
+        }
+    }
+
+    negSupport(B, false, min);
+    return B;
 }
 
 int main(int argc, char* argv[])
