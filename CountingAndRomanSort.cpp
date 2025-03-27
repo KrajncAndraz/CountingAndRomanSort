@@ -125,7 +125,29 @@ vector<int> romanSort(vector<int>& A)
 
 int main(int argc, char* argv[])
 {
-    cout<<"Hello World!"<<endl;
+    if (argc != 3)
+    {
+        cout << "\nInvalid number of arguments!\n\n";
+        return 3;
+    }
+
+    string filename = string(argv[2]);
+    vector<int> A = getArray(filename);
+
+    switch (*argv[1])
+    {
+        case '0':
+            A = countingSort(A);
+            break;
+        case '1':
+            A = romanSort(A);
+            break;
+        default:
+            cout << "\nInvalid argument: " << *argv[1] << "!\n\n";
+            return 4;
+    }
+
+    saveArray(A);
 
     return 0;
 }
