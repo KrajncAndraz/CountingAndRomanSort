@@ -66,7 +66,13 @@ int negSupport(vector<int>& arr, bool convert, int min = 0)
 
 vector<int> innitC(vector<int>& A)
 {
-    //innitialize C - find max value in A and set C's size to it
+    int max = 0;
+    for (int i = 0; i < A.size(); i++)
+    {
+        if (A[i] > max)
+            max = A[i];
+    }
+    return vector<int>(max+1, 0);
 }
 
 int main(int argc, char* argv[])
