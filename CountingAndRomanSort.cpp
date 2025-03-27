@@ -64,6 +64,11 @@ int negSupport(vector<int>& arr, bool convert, int min = 0)
     return 0;
 }
 
+vector<int> innitC(vector<int>& A)
+{
+    //innitialize C - find max value in A and set C's size to it
+}
+
 int main(int argc, char* argv[])
 {
     cout<<"Hello World!"<<endl;
